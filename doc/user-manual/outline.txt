@@ -1,0 +1,86 @@
+
+1. Introduction	- Vern
+
+   Philosophy (aka "Bro is not Snort, nor Surricata")
+
+   Features
+   
+2. Getting Started - Seth
+
+   Installing Bro
+
+   Running Bro from the Command Line
+   
+   Using Bro Control
+
+   System Tuning
+
+3. Using Bro - Robin
+
+   Understanding Bro's Output
+      Notices and Alarms
+      Activity Logs
+      Weird Activity
+      
+   Standard Policy Files
+      <Some of the more important ones>
+
+   Behind the Curtain:
+      Capture Filters
+      Dynamic Protocol Detection
+
+   Customizing Scripts
+      Building a Site Policy   
+      Notice Policy
+      Tuning
+
+   (Active Response? Might skip this.)
+   
+   Offline Analysis
+
+4. Writing Bro Scripts - Vern 
+   
+   A language tutorial, not striving for completeness but explaining
+   the most important concepts. 
+   
+5. Scripting Idioms/Patterns - All
+
+   - Tracking State - Robin
+
+   - TODO: Collect more. 
+
+6. Advanced Topics - Robin
+
+   Inter-Bro Communication 
+
+   Signatures 
+  
+   Profiling and Debugging 
+
+6. Using Bro Control (standalone) - Robin
+
+7. Operating a Bro Cluster
+
+   Hardware setup - Seth
+   
+   BroControl in cluster mode - Robin
+
+8. Interfacing with the External World - Christian
+
+   Broccoli (w/ tools)
+
+9. Using a Time Machine - Robin
+
+   - Stand-alone
+   
+   - With Bro. 
+
+10. Bro in Operation - Seth
+
+   <Tie things together from an operational perspective>
+
+11. Summary - Seth
+
+   Getting Help
+   
+   Contributing Back   
