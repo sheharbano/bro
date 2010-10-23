@@ -21,3 +21,7 @@ Using Bro (Robin)
 * (Active Response? Might skip this.)
    
 * Offline Analysis
+
+Testing the script role: :script:`conn.log`. 
+
+Testing the Bro macro: |Bro|.

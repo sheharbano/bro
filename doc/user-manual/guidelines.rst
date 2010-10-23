@@ -29,13 +29,20 @@ Inline Markup
     [...]
     
     This is a book about |Bro|. 
+
+* For names of existing Bro scripts, use the ``script`` role
+  (defined in ``main.rst``)::
+  
+     Do not forget to load :script:`conn.log`.
     
-* Do not use any other inline markup.
+*Rule of thumb*: Do not use any other inline markup. If you find
+yourself needing something else, first add a description to the list
+above, so that others will use it in the same way. Consider using 
+semantical markup in the form of new roles, such as the ``script``
+role described above. 
 
 Paragraph Markup
 ~~~~~~~~~~~~~~~~
-
-
 
 
 Writing Style 
@@ -47,19 +54,18 @@ Writing Style
 
 * Cross-references.
 
-  - To chapters/sections.
+  - TODO: to chapters/sections.
   
-  - To Figures.
+  - TODO: to Figures.
 
-* Citations.
+* TODO: Citations.
 
 Figures
 -------
 
 For now, just draw preliminary figures conveying the main pieces,
-using whatever program you prefer. Do not spend much time on
-polishing optics, we need to settle on a single style eventually
-anyway. 
+using whatever program you prefer. Do not spend time on polishing,
+we need to settle on a single style eventually anyway. 
 
 
 

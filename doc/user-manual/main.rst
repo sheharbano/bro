@@ -3,6 +3,8 @@
 
 .. |Bro| replace:: *Bro*
 
+.. role:: script(literal)
+
 ========
 The Book
 ========
@@ -15,7 +17,7 @@ The Book
 .. sectnum:: 
    :start: 0
 
-.. include:: book-style.rst
+.. include:: guidelines.rst
 
 .. include:: intro.rst
 .. include:: starting.rst
