@@ -11,13 +11,11 @@ The Book
 
 :Author: The Bro Team
 :Version: |date|
-:Copyright: The Bro Team
 
 .. contents:: Table of Contents
 .. sectnum:: 
-   :start: 0
 
-.. include:: guidelines.rst
+`Guidelines <guidelines.html>`_ for writing this book. 
 
 .. include:: intro.rst
 .. include:: starting.rst

@@ -1,11 +1,12 @@
 
-Guidelines For Writing
-======================
+===================================
+Guidelines For Writing The Bro Book
+===================================
 
-.. note: ReST Documentation. 
+reST Documentation
+------------------
 
-   http://docutils.sourceforge.net/rst.html
-
+See `here <http://docutils.sourceforge.net/rst.html>`_. 
 
 Markup
 ------
