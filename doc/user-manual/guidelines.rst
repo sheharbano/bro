@@ -6,7 +6,7 @@ Guidelines For Writing The Bro Book
 reST Documentation
 ------------------
 
-See `here <http://docutils.sourceforge.net/rst.html>`_. 
+See `here <http://docutils.sourceforge.net/rst.html>`_.
 
 Markup
 ------
@@ -45,6 +45,11 @@ role described above.
 Paragraph Markup
 ~~~~~~~~~~~~~~~~
 
+To mark to-do items, use the ``todo`` directive::
+
+    .. todo:: Still need to fix the example.
+
+See ``docutils/todo.py`` for an example how to add custom directives. 
 
 Writing Style 
 -------------
@@ -67,6 +72,24 @@ Figures
 For now, just draw preliminary figures conveying the main pieces,
 using whatever program you prefer. Do not spend time on polishing,
 we need to settle on a single style eventually anyway. 
+
+Exercises
+---------
+
+We should add a set of exercises to each chapter (or section where
+appropiate). These exercises should demonstrate the main lessons
+learned in the corresponding discussion, usually using trace files
+that we provide online. Please also provide a sample solution (this
+won't be going into the book, but we can use them for example for
+future workshops).
+
+* TODO: Come up with some templete markup for the exercises and
+  solutions. 
+
+
+
+
+
 
 
 

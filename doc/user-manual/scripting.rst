@@ -1,4 +1,6 @@
 
+.. _scripting:
+
 Writing Bro Scripts (Vern)
 ==========================
 

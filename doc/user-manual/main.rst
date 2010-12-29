@@ -3,7 +3,11 @@
 
 .. |Bro| replace:: *Bro*
 
+.. The web site with additional information and examples. 
+.. |www| replace:: http://www.bro-ids.org/book
+
 .. role:: script(literal)
+.. role:: todo(strong)
 
 ========
 The Book

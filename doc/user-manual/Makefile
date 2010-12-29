@@ -5,7 +5,8 @@ REST = advanced.rst broccoli.rst brocontrol.rst cluster.rst \
 
 DEST = html
 
-RST2HTML_FLAGS = --toc-top-backlinks
+RST2HTML       = docutils/rst2html-custom
+RST2HTML_FLAGS = --toc-top-backlinks --stylesheet-path docutils/html4css1-custom.css
 
 all: dest-dir index.html guidelines.html
 
@@ -16,7 +17,7 @@ dest-dir:
 	@install -d $(DEST)
     
 index.html :  $(REST) Makefile
-	rst2html.py $(RST2HTML_FLAGS) main.rst >$(DEST)/index.html
+	$(RST2HTML) $(RST2HTML_FLAGS) main.rst >$(DEST)/index.html
 
 guidelines.html : guidelines.rst Makefile
-	rst2html.py $(RST2HTML_FLAGS) guidelines.rst >$(DEST)/guidelines.html
+	$(RST2HTML) $(RST2HTML_FLAGS) guidelines.rst >$(DEST)/guidelines.html
