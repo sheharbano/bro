@@ -1,0 +1,24 @@
+
+README
+======
+
+This directory contains the source code for Bro new user's manual.
+
+To build it, you need to have *docutils* >= 0.7 installed, see
+http://docutils.sourceforge.net .
+
+Once that is available, just type ``make`` and an HTML version of the
+manual will be built in ``html/index.html``.
+
+Notes for Authors
+-----------------
+
+Some guidelines for writing chapters are in ``guidelines.rst``. Please
+make sure to read them, and feel free to extend. The Makefile builds
+an HTML version in ``html/guidelines.rst``.
+
+Furthermore, ``hints.rst`` collects some random points that we should
+eventually mention somewhere in the user's manual. If you think of
+something that would be good to have, but which doesn't fit in with
+what you're working on right now, just add it there. 
+
