@@ -2,12 +2,14 @@
 .. |date| date::
 
 .. |Bro| replace:: *Bro*
+.. |BroControl| replace:: *BroControl*
 
 .. The web site with additional information and examples. 
 .. |www| replace:: http://www.bro-ids.org/book
 
 .. role:: script(literal)
 .. role:: todo(strong)
+.. role:: tool(literal)
 
 ========
 The Book

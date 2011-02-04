@@ -23,7 +23,8 @@ Inline Markup
   
       Run it as ``bro mt``. The output is ``Foo``.
 
-* For names of programs, define a macro in ``main.rst`` and use that::
+* For names of programs that are part of the Bro project, define a
+  macro in ``main.rst`` and use that::
 
     .. |Bro| replace:: *Bro*
     
@@ -35,7 +36,11 @@ Inline Markup
   (defined in ``main.rst``)::
   
      Do not forget to load :script:`conn.log`.
-    
+
+* For external tools/software, use ``tool``::
+
+     Learn :tool:`tcpdump`.
+
 *Rule of thumb*: Do not use any other inline markup. If you find
 yourself needing something else, first add a description to the list
 above, so that others will use it in the same way. Consider using 
@@ -76,7 +81,7 @@ we need to settle on a single style eventually anyway.
 Exercises
 ---------
 
-We should add a set of exercises to each chapter (or section where
+We should add a set of exercises to each chapter (or section, where
 appropiate). These exercises should demonstrate the main lessons
 learned in the corresponding discussion, usually using trace files
 that we provide online. Please also provide a sample solution (this
@@ -86,6 +91,13 @@ future workshops).
 * TODO: Come up with some templete markup for the exercises and
   solutions. 
 
+Little Hints
+------------
+
+There is file called "hints.rst" for collecting all the little tips
+and pointers for making life easier that don't fit (yet) anywhere
+else. This is mainly for collecting them, and we can see later what
+to do about them (they might just go into an FAQ or blog posting). 
 
 
 

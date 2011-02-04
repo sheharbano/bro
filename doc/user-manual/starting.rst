@@ -1,4 +1,6 @@
 
+.. _starting:
+
 Getting Started - Seth
 ======================
 
