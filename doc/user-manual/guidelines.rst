@@ -71,6 +71,14 @@ Writing Style
 
 * TODO: Citations.
 
+Examples
+--------
+
+For examples, for now just use any trace that is not sensitive, and
+put it into the ``traces/`` directory. Eventually, we will sort
+through and prepare a set of trace files we can put online to repeat
+the examples when reading the manual. 
+
 Figures
 -------
 

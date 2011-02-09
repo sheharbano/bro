@@ -1,4 +1,5 @@
 
+
 Advanced Topics (Robin)
 =======================
 
@@ -7,3 +8,7 @@ Advanced Topics (Robin)
 * Signatures 
 * Profiling and Debugging 
 * Using Bro for Understanding Your Network 
+
+.. _customizing logs:
+
+* Customizing log files

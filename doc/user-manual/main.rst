@@ -1,8 +1,10 @@
 
 .. |date| date::
 
-.. |Bro| replace:: *Bro*
+.. |Bro|        replace:: *Bro*
 .. |BroControl| replace:: *BroControl*
+.. |Notice|     replace:: *Notice*
+.. |Alarm|     replace:: *Alarm*
 
 .. The web site with additional information and examples. 
 .. |www| replace:: http://www.bro-ids.org/book
