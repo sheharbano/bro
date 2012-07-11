@@ -8,3 +8,4 @@
 abc\x0a\xffdef|DATA2
 abc\x7c\xffdef|DATA2
 abc\xff\x7cdef|DATA2
+#EOF

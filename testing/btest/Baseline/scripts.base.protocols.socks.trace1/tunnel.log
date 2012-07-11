@@ -6,3 +6,4 @@
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	tunnel_type	action
 #types	time	string	addr	port	addr	port	enum	enum
 1340213015.276495	-	10.0.0.55	0	60.190.189.214	8124	Tunnel::SOCKS	Tunnel::DISCOVER
+#EOF

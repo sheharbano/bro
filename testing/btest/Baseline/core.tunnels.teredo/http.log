@@ -9,3 +9,4 @@
 1210953061.585996	70MGiRM1Qf4	2001:0:4137:9e50:8000:f12a:b9c8:2815	1286	2001:4860:0:2001::68	80	1	GET	ipv6.google.com	/	-	Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9b5) Gecko/2008032620 Firefox/3.0b5	0	6640	200	OK	-	-	-	(empty)	-	-	-	text/html	-	-
 1210953073.381474	70MGiRM1Qf4	2001:0:4137:9e50:8000:f12a:b9c8:2815	1286	2001:4860:0:2001::68	80	2	GET	ipv6.google.com	/search?hl=en&q=Wireshark+!&btnG=Google+Search	http://ipv6.google.com/	Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9b5) Gecko/2008032620 Firefox/3.0b5	0	25119	200	OK	-	-	-	(empty)	-	-	-	text/html	-	-
 1210953074.674817	c4Zw9TmAE05	192.168.2.16	1580	67.228.110.120	80	1	GET	www.wireshark.org	/	http://ipv6.google.com/search?hl=en&q=Wireshark+%21&btnG=Google+Search	Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9b5) Gecko/2008032620 Firefox/3.0b5	0	11845	200	OK	-	-	-	(empty)	-	-	-	text/xml	-	-
+#EOF

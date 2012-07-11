@@ -28,3 +28,4 @@ scripts/base/init-bare.bro
     scripts/base/frameworks/input/./readers/raw.bro
     scripts/base/frameworks/input/./readers/benchmark.bro
 scripts/policy/misc/loaded-scripts.bro
+#EOF

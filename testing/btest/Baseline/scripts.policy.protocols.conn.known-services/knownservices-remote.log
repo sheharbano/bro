@@ -7,3 +7,4 @@
 #types	time	addr	port	enum	table[string]
 1308930716.462556	74.125.225.81	80	tcp	HTTP
 1308930726.872485	141.142.192.39	22	tcp	SSH
+#EOF
