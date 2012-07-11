@@ -52,7 +52,10 @@ Ascii::Ascii(WriterFrontend* frontend) : WriterBackend(frontend)
 Ascii::~Ascii()
 	{
 	if ( file )
+		{
+		WriteEOF();
 		fclose(file);
+		}
 
 	delete [] separator;
 	delete [] set_separator;
@@ -67,6 +70,13 @@ bool Ascii::WriteHeaderField(const string& key, const string& val)
 		key + string(separator, separator_len) + val + "\n";
 
 	return (fwrite(str.c_str(), str.length(), 1, file) == 1);
+	}
+
+void Ascii::WriteEOF()
+	{
+	assert(file != 0);
+	string eofmark = string(header_prefix, header_prefix_len) + "EOF\n";
+	fwrite(eofmark.c_str(), eofmark.length(), 1, file);		
 	}
 
 bool Ascii::DoInit(const WriterInfo& info, int num_fields, const Field* const * fields)
@@ -324,6 +334,8 @@ bool Ascii::DoRotate(string rotated_path, double open, double close, bool termin
 	// Don't rotate special files or if there's not one currently open.
 	if ( ! file || IsSpecial(Info().path) )
 		return true;
+
+	WriteEOF();
 
 	fclose(file);
 	file = 0;

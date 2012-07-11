@@ -33,6 +33,7 @@ private:
 	bool IsSpecial(string path) 	{ return path.find("/dev/") == 0; }
 	bool DoWriteOne(ODesc* desc, threading::Value* val, const threading::Field* field);
 	bool WriteHeaderField(const string& key, const string& value);
+	void WriteEOF();
 
 	FILE* file;
 	string fname;
