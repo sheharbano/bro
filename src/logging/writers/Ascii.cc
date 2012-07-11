@@ -18,7 +18,7 @@ Ascii::Ascii(WriterFrontend* frontend) : WriterBackend(frontend)
 	file = 0;
 
 	output_to_stdout = BifConst::LogAscii::output_to_stdout;
-	include_header = BifConst::LogAscii::include_header;
+	include_format = BifConst::LogAscii::include_format;
 
 	separator_len = BifConst::LogAscii::separator->Len();
 	separator = new char[separator_len];
@@ -74,9 +74,12 @@ bool Ascii::WriteHeaderField(const string& key, const string& val)
 
 void Ascii::WriteEOF()
 	{
-	assert(file != 0);
-	string eofmark = string(header_prefix, header_prefix_len) + "EOF\n";
-	fwrite(eofmark.c_str(), eofmark.length(), 1, file);		
+	if ( include_format )
+		{
+		assert(file != 0);
+		string eofmark = string(header_prefix, header_prefix_len) + "EOF\n";
+		fwrite(eofmark.c_str(), eofmark.length(), 1, file);
+		}	
 	}
 
 bool Ascii::DoInit(const WriterInfo& info, int num_fields, const Field* const * fields)
@@ -96,7 +99,7 @@ bool Ascii::DoInit(const WriterInfo& info, int num_fields, const Field* const * 
 		return false;
 		}
 
-	if ( include_header )
+	if ( include_format )
 		{
 		string names;
 		string types;

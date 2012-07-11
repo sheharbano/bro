@@ -41,7 +41,7 @@ private:
 
 	// Options set from the script-level.
 	bool output_to_stdout;
-	bool include_header;
+	bool include_format;
 
 	char* separator;
 	int separator_len;

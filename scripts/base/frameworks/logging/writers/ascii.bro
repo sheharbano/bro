@@ -9,8 +9,9 @@ export {
 	const output_to_stdout = F &redef;
 
 	## If true, include a header line with column names and description
-	## of the other ASCII logging options that were used.
-	const include_header = T &redef;
+	## of the other ASCII logging options that were used and a footer line
+	## that marks the end of the file.
+	const include_format = T &redef;
 
 	## Prefix for the header line if included.
 	const header_prefix = "#" &redef;
