@@ -1,4 +1,4 @@
-##! Calculate MD5 sums for server DER formatted certificates.
+##! Calculates SHA1 digests for DER formatted server certificates.
 
 @load base/protocols/ssl
 
@@ -6,7 +6,7 @@ module SSL;
 
 export {
 	redef record Info += {
-		## MD5 sum of the raw server certificate.
+		## SHA1 digest of the raw server certificate.
 		cert_hash: string &log &optional;
 	};
 }
@@ -18,5 +18,5 @@ event x509_certificate(c: connection, is_orig: bool, cert: X509, chain_idx: coun
 	if ( is_orig || chain_idx != 0 || ! c?$ssl ) 
 		return;
 
-	c$ssl$cert_hash = md5_hash(der_cert);
+	c$ssl$cert_hash = sha1_hash(der_cert);
 	}
