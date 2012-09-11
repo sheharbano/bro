@@ -30,26 +30,44 @@ export {
 	};
 }
 
+# Global state to avoid stack frame duplication in the when statement.
+global ssl_info: table[string] of Info;
+
 event x509_certificate(c: connection, is_orig: bool, cert: X509, chain_idx: count, chain_len: count, der_cert: string) &priority=3
 	{
-	if ( is_orig || chain_idx != 0 || ! c$ssl?$cert_hash )
+	if ( ! c$ssl?$cert_hash )
         return;
+
+    local hash = c$ssl$cert_hash;
 
     if ( enable_notary_lookup )
         {
-        local seen = fmt("%s.%s", c$ssl$cert_hash, notary_lookup_host);
+        ssl_info[hash] = c$ssl;
+        local seen = fmt("%s.%s", hash, notary_lookup_host);
         when ( local seen_addrs = lookup_hostname(seen) )
             {
-            c$ssl$notary_seen = 127.0.0.2 in seen_addrs;
+            ssl_info[hash]$notary_seen = 127.0.0.2 in seen_addrs;
             }
         }
 
     if ( enable_notary_validation )
         {
-        local validated = fmt("%s.%s", c$ssl$cert_hash, notary_validation_host);
+        if (hash !in ssl_info)
+            ssl_info[hash] = c$ssl;
+
+        local validated = fmt("%s.%s", hash, notary_validation_host);
         when ( local val_addrs = lookup_hostname(validated) )
             {
-            c$ssl$notary_validated = 127.0.0.2 in val_addrs;
+            ssl_info[hash]$notary_validated = 127.0.0.2 in val_addrs;
             }
         }
+    }
+
+event log_ssl(rec: Info)
+    {
+	if ( ! rec?$cert_hash )
+        return;
+
+    if ( rec$cert_hash in ssl_info )
+        delete ssl_info[rec$cert_hash];
     }
