@@ -1,6 +1,6 @@
 ##! Check SSL certificate validity through a notary.
 
-@load base/protocols/ssl
+@load policy/protocols/ssl/cert-hash
 
 module Notary;
 
@@ -56,13 +56,15 @@ event bro_init() &priority=5
 
 event x509_certificate(c: connection, is_orig: bool, cert: X509, chain_idx: count, chain_len: count, der_cert: string) &priority=3
 	{
-    if ( ! enable_notary )
+    if ( ! enable_notary || is_orig )
         return;
 
-	if ( ! c$ssl?$cert_hash )
-        return;
+    local hash: string;
+	if ( chain_idx == 0 && c$ssl?$cert_hash )
+        hash = c$ssl$cert_hash;
+    else
+        hash = sha1_hash(der_cert);
 
-    local hash = c$ssl$cert_hash;
     local rec: Info = [$ts=network_time(), $uid = c$uid, $hash=hash];
 
     if ( hash in cache )
