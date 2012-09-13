@@ -7,10 +7,15 @@ module Notary;
 export {
     redef enum Log::ID += { LOG };
 
+    ## Flag indicating whether we should also lookup intermediate certficates
+    ## in the chain returned by the server. If ``F``, the script only examines
+    ## the server certificate.
+    const intermediates = F &redef;
+
     ## If ``T``, Bro performs a certificate hash lookup for each SSL session
     ## containing a server certificate, checking whether the notary has seen
     ## the certificate and whether the notary was able to validate it..
-	const enable_notary = T &redef;
+    const enable_notary = T &redef;
 
     ## The hostname of the notary containing all server certificate hashes.
     const all = "all.notary.bro-ids.org" &redef;
@@ -60,10 +65,12 @@ event x509_certificate(c: connection, is_orig: bool, cert: X509, chain_idx: coun
         return;
 
     local hash: string;
-	if ( chain_idx == 0 && c$ssl?$cert_hash )
+    if ( c$ssl?$cert_hash ) # Implies chain_idx == 0.
         hash = c$ssl$cert_hash;
-    else
+    else if ( intermediates && chain_idx != 0 )
         hash = sha1_hash(der_cert);
+    else
+        return;
 
     local rec: Info = [$ts=network_time(), $uid = c$uid, $hash=hash];
 
